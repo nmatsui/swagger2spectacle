@@ -13,7 +13,7 @@ if [ ! -e /mnt/${YAML_FILE} ]; then
   exit 1
 fi
 
-/opt/node_modules/.bin/spectacle -t . /mnt/${YAML_FILE}
+node /opt/spectacle/bin/spectacle.js -t . /mnt/${YAML_FILE}
 sed -i -e 's#<link rel="stylesheet" href="stylesheets/foundation.min.css" />#<link inline rel="stylesheet" href="stylesheets/foundation.min.css" />#' /opt/index.html
 sed -i -e 's#<link rel="stylesheet" href="stylesheets/spectacle.min.css" />#<link inline rel="stylesheet" href="stylesheets/spectacle.min.css" />#' /opt/index.html
 sed -i -e 's#<script src="javascripts/spectacle.min.js"></script>#<script inline src="javascripts/spectacle.min.js"></script>#' /opt/index.html
